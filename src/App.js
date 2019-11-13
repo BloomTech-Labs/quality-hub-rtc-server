@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+import './index.scss';
+import InterviewLandingPage from "./components/Landing Page/index.js"
 
 function App() {
   return (
     <div className="App">
-     
+  <InterviewLandingPage />
     </div>
   );
 }
