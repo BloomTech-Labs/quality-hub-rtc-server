@@ -1,0 +1,29 @@
+.interview-cta{
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+    border: 1px solid grey;
+}
+
+.interview-header{
+    width: 100%;
+    background-color: lightgray;
+    margin-top: 0;
+    border: 1px solid lightgray;
+    padding: 2% 10%;
+
+    h3{
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+    }
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    text-align: left;
+}

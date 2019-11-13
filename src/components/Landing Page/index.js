@@ -1,3 +1,3 @@
-import LandingPage from './LandingPage';
+import InterviewLandingPage from './LandingPage';
 
-export default LandingPage;
+export default InterviewLandingPage;

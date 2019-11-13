@@ -1,12 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+//require('dotenv').config();
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// const getToken = () => {
+//   let token = localStorage.getItem('token');
+//   return token ? `Bearer ${token}` : '';
+// };
+
+// const client = new ApolloClient({
+//   uri: 'https://quality-hub-gateway-staging.herokuapp.com/',
+//   request: operation => {
+//     operation.setContext({
+//       headers: {
+//         Authorization: getToken(),
+//       },
+//     });
+//   },
+// });
+
+// ReactDOM.render(
+//   <ApolloProvider client={client}>
+//     <Router>
+//       <App />
+//     </Router>
+//   </ApolloProvider>,
+//   document.getElementById('root'),
+// );
+
+ReactDOM.render(
+    <Router>
+      <App />
+    </Router>,
+    document.getElementById('root')
+  );
+  
