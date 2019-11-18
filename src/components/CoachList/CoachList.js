@@ -6,6 +6,9 @@ const CoachList = () => {
     return(
         <div className="coach-list">
         <CoachCard />
+        <CoachCard />
+        <CoachCard />
+        <CoachCard />
         </div>
     )
 }

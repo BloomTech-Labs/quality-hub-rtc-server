@@ -5,38 +5,32 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-//require('dotenv').config();
+require('dotenv').config();
 
 
-// const getToken = () => {
-//   let token = localStorage.getItem('token');
-//   return token ? `Bearer ${token}` : '';
-// };
+const getToken = () => {
+  let token = localStorage.getItem('token');
+  return token ? `Bearer ${token}` : '';
+};
 
-// const client = new ApolloClient({
-//   uri: 'https://quality-hub-gateway-staging.herokuapp.com/',
-//   request: operation => {
-//     operation.setContext({
-//       headers: {
-//         Authorization: getToken(),
-//       },
-//     });
-//   },
-// });
-
-// ReactDOM.render(
-//   <ApolloProvider client={client}>
-//     <Router>
-//       <App />
-//     </Router>
-//   </ApolloProvider>,
-//   document.getElementById('root'),
-// );
+const client = new ApolloClient({
+  uri: 'https://quality-hub-gateway-staging.herokuapp.com/',
+  request: operation => {
+    operation.setContext({
+      headers: {
+        Authorization: getToken(),
+      },
+    });
+  },
+});
 
 ReactDOM.render(
+  <ApolloProvider client={client}>
     <Router>
       <App />
-    </Router>,
-    document.getElementById('root')
-  );
+    </Router>
+  </ApolloProvider>,
+  document.getElementById('root'),
+);
+
   
