@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import InterviewLandingPage from "./components/Landing Page/index.js"
 import NavBar from './components/NavBar';
+import CoachFormTwo from './components/CoachForm/CoachForm02';
 
 import './index.scss';
 
@@ -19,6 +20,7 @@ function App() {
 			/>
       <Switch>
       <Route exact path='/' component={InterviewLandingPage}/>
+      <Route path='/form02' component={CoachFormTwo}/>
       </Switch>
     </div>
   );
