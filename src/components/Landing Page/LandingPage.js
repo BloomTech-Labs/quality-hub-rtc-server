@@ -24,10 +24,11 @@ const InterviewLandingPage = ({
                 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dictum adipiscing amet, sollicitudin arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dictum adipiscing amet, sollicitudin arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dictum adipiscing amet, sollicitudin arcu.</h3>
 
             </div>
-             <div className="Search/dropdowns">
-            
+
+        <div className="Landingpage-contanier">
+            <div className="Search-dropdowns">
             <input type="text" placeholder="Search by Keyword"  />
-            <div className='input-label'>
+                <div className='input-label'>
 					{/* <label htmlFor='sign-up-state'>Company*</label> */}
 					<br />
 					<select
@@ -96,9 +97,13 @@ const InterviewLandingPage = ({
 							</option>
 						))} */}
 					</select>
+                    </div>
 				</div>
+            <div className="Coach-List">
+                <CoachList />
+                </div>
             </div>
-            <CoachList />
+            
         </div>
     )
 }
