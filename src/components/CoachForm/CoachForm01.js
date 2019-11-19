@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { gql } from 'apollo-boost';
+import { Link } from 'react-router-dom';
 
 import ProgressBar from './ProgressBar';
 
@@ -8,7 +8,8 @@ function submitHandler() {
 //     .post()
 }
 
-const CoachForm = () => {
+
+const CoachForm = (props) => {
     const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: ""});
     const [progress, setProgress] = useState(1)
     const handleProgress = (e) => {
@@ -27,7 +28,7 @@ const CoachForm = () => {
             <p className="coach-form-title">
                 This is your InterviewQ coach profile. Seekers will see this information. Write everything that you want seekers to know about you. This is your chance to sell yourself to prospective seekers! 
             </p>
-            <form className="coach-form" onSubmit={submitHandler}>
+            <form className="coach-form" >
 
                 <div className="coach-form-company">
                     <h3>Company</h3>
@@ -96,6 +97,9 @@ const CoachForm = () => {
                 <div className="coach-form-buttons">
                     <div onClick={handleProgress}>Back</div>
                     <button type="submit" value="next" onClick={handleProgress}>Save and next</button>
+                    <Link to='/'>Back</Link>
+                    <Link to='/02'>Save and next</Link>
+
                 </div>
             </form>
         </div>
