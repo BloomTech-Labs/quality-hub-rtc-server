@@ -21,7 +21,8 @@ function App() {
 			/>
       <Switch>
       <Route exact path='/' component={InterviewLandingPage}/>
-<Route path="/form02" component={CoachFormTwo}/>
+      <Route path="/hey" component={DatePicker} />
+      <Route path='/addcoach' component={CoachForm00}/>
       </Switch>
     </div>
   );
