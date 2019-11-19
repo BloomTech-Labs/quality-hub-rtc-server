@@ -10,19 +10,31 @@ import CoachForm03 from './CoachForm03'
 
 const CoachForm00 = () => {
     const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: ""});
-    
+    const [progress, setProgress] = useState(1)
+
     useEffect (() => {
         console.log(formState)
     },[formState])
 
+    const handleProgress = (e) => {
+      e.preventDefault();
+      if (e.target.value) {
+        setProgress(prog => prog + 1)
+      } else {
+        setProgress(prog => prog - 1)
+      }
+
+    }
+
     return (
-        <ProgressBar />
-        <Route
-			render={props => (
-				<CoachForm01 {...props} formState={formState} setFormState={setFormState} />
-		    )} 
-        />
-        
+        <div>
+            <ProgressBar progress={progress} />
+            <Route
+                render={props => (
+                    <CoachForm01 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                )} 
+            />
+        </div>
 
 
     )
