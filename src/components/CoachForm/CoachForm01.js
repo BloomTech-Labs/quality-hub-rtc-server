@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
-function submitHandler() {
-//     axiosWithAuth
-//     .post()
-}
-
-
 const CoachForm = (setFormState, formState, handleProgress) => {
-    
+    function submitHandler() {
+    //     axiosWithAuth
+    //     .post()
+    }
 
+    
+    const [progress, setProgress] = useState(1)
+    
+    const handleProgress = (e) => {
+      e.preventDefault();
+      if (e.target.value) {
+        setProgress(prog => prog + 1)
+      } else {
+        setProgress(prog => prog - 1)
+      }
+
+
+    }
+
+
+    
     return(
         <div className="coach-form-container"> 
             <h2 className="coach-form-title">Coach Profile</h2>
