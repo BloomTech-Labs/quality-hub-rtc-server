@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../NavBar';
 import './LandingPage.scss';
 import CoachList from '../CoachList/CoachList.js'
+import {Link} from 'react-router-dom'
 
 const InterviewLandingPage = ({
     handleChange,
@@ -16,7 +17,7 @@ const InterviewLandingPage = ({
         <div className="interview-landing-page">
             <div className="interview-cta">
             <button>X</button>
-                <h4>Are you interested in becoming a coach? Become a coach now</h4>
+                <h4>Are you interested in becoming a coach? <Link to='/addcoach'>Become a coach now</Link></h4>
             </div>
             <div className="interview-header">
             <button>X</button>

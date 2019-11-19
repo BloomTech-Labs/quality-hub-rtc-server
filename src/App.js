@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
 
 import InterviewLandingPage from "./components/Landing Page/index.js"
-import CoachForm from "./components/CoachForm/CoachForm01";
+import CoachForm00 from "./components/CoachForm/CoachForm00";
 import NavBar from './components/NavBar';
 import DatePicker from './components/DatePicker';
 
@@ -22,7 +22,7 @@ function App() {
       <Route exact path='/' component={InterviewLandingPage}/>
 
       <Route path="/hey" component={DatePicker} />
-      <Route path='/addcoach' component={CoachForm}/>
+      <Route path='/addcoach' component={CoachForm00}/>
       </Switch>
     </div>
   );

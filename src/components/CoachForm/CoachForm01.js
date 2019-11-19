@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import ProgressBar from './ProgressBar';
+const CoachForm = (setFormState, formState, handleProgress) => {
+    function submitHandler() {
+    //     axiosWithAuth
+    //     .post()
+    }
 
-function submitHandler() {
-//     axiosWithAuth
-//     .post()
-}
-
-
-
-const CoachForm = ({formState, setFormState}) => {
     
     const [progress, setProgress] = useState(1)
     
@@ -24,9 +20,11 @@ const CoachForm = ({formState, setFormState}) => {
 
 
     }
+
+
+    
     return(
-        <div className="coach-form-container">
-            <ProgressBar progress={progress} />
+        <div className="coach-form-container"> 
             <h2 className="coach-form-title">Coach Profile</h2>
             <p className="coach-form-title">
                 This is your InterviewQ coach profile. Seekers will see this information. Write everything that you want seekers to know about you. This is your chance to sell yourself to prospective seekers! 
