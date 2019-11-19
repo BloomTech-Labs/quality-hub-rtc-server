@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import { gql } from 'apollo-boost';
 
+import ProgressBar from './ProgressBar';
 
 function submitHandler() {
-    axiosWithAuth
-    .post()
+//     axiosWithAuth
+//     .post()
 }
 
 const CoachForm = () => {
     const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: ""});
+    const [progress, setProgress] = useState(1)
+    const handleProgress = (e) => {
+      e.preventDefault();
+      if (e.target.value) {
+        setProgress(prog => prog + 1)
+      } else {
+        setProgress(prog => prog - 1)
+      }
 
+    }
     return(
         <div className="coach-form-container">
+            <ProgressBar progress={progress} />
             <h2 className="coach-form-title">Coach Profile</h2>
             <p className="coach-form-title">
                 This is your InterviewQ coach profile. Seekers will see this information. Write everything that you want seekers to know about you. This is your chance to sell yourself to prospective seekers! 
@@ -83,8 +94,8 @@ const CoachForm = () => {
                     </div>
                 </div>
                 <div className="coach-form-buttons">
-                    <div>Back</div>
-                    <button type="submit">Save and next</button>
+                    <div onClick={handleProgress}>Back</div>
+                    <button type="submit" value="next" onClick={handleProgress}>Save and next</button>
                 </div>
             </form>
         </div>
