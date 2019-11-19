@@ -35,12 +35,6 @@ const CoachForm00 = () => {
                 
                 )} 
             />
-            {/* <Route
-                render={props => (
-                    <CoachForm02 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
-                
-                )} 
-            /> */}
         </div>
 
 
