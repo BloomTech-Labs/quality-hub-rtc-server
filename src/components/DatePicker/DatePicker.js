@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import DateColumn from './DateColumn';
+
 import './DatePicker.scss';
 const DatePicker = () => {
   let [year, setYear] = useState(2019);
@@ -18,7 +20,7 @@ const DatePicker = () => {
   useEffect(() => {
     let newWeek = [];
     for (let i = 0; i < 7; i++) {
-      let date = new Date(week.getFullYear(), week.getMonth(), (week.getDate() + i));
+      let date = new Date(week.getFullYear(), week.getMonth(), (week.getDate() + i), 9);
       newWeek.push(date)
     }
     setDates(newWeek)
@@ -49,11 +51,9 @@ const DatePicker = () => {
         <button onClick={handleDateChange} value="">-</button>
         <button onClick={handleDateChange} value={true}>+</button>
         Date Picker
-        {weekDates.map(date => {
-          return (<div>
-            Date: {date.toString()}
-          </div>)
-        })}
+        {weekDates.map(date => 
+          <DateColumn date={date} />
+        )}
       </div>
     </div>
   )
