@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 
 
-const CoachForm = (props) => {
-    const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: ""});
+const CoachForm = ({formState, setFormState}) => {
+    
 
     return(
         <div className="coach-form-container">
