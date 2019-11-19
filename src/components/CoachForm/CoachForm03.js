@@ -12,21 +12,7 @@ import portfolio from '../../icons/portfolio.svg'
 import twitter from '../../icons/twitter.svg'
 
 
-const CoachForm03 = props => {
-    console.log(props)
-
-    const [accounts, setAccounts] = useState({
-        linkedin_url: '',
-        linkedin_switch: false,
-        github_url: '',
-        github_switch: false,
-        website_url: '',
-        website_switch: false,
-        portfolio_url: '',
-        portfolio_switch: false,
-        twitter_url: '',
-        twitter_switch: 'false',
-    })
+const CoachForm03 = ({ accounts, setAccounts }) => {
 
     const userInput = e => {
         setAccounts({
