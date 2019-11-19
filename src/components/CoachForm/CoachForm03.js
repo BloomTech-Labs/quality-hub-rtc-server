@@ -45,7 +45,7 @@ const CoachForm03 = props => {
 
 
     return (
-        <OtherAccoutnts>
+        <OtherAccounts>
             <div>
                 <h3>Linked Accounts</h3>
                 <p>The links that you provide and enable will be visable to seekers on the coach list</p>
@@ -74,11 +74,11 @@ const CoachForm03 = props => {
                 <button>Back</button>
                 <button>Save and next</button>
             </div>
-        </OtherAccoutnts>
+        </OtherAccounts>
     )
 }
 
-const OtherAccoutnts = styled.div`
+const OtherAccounts = styled.div`
     text-align: center;
 `;
 
