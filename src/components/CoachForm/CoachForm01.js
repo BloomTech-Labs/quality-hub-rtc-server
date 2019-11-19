@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CoachForm = ({setFormState, formState, handleProgress}) => {
-    function submitHandler() {
 
-    }
 
     
     const [progress, setProgress] = useState(1)
@@ -85,7 +83,7 @@ const CoachForm = ({setFormState, formState, handleProgress}) => {
                     {/* <div onClick={handleProgress}>Back</div> */}
                     {/* <button type="submit" value="next" onClick={handleProgress}>Save and next</button> */}
                     <Link to='/' >Back</Link>
-                    <Link to='/02'>Save and next</Link>
+                    <Link to='/addcoach/02'>Save and next</Link>
 
                 </div>
             </form>

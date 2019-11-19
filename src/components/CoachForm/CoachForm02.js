@@ -1,4 +1,5 @@
 import React, { useState, Component } from 'react';
+import { Link } from 'react-router-dom';
 import './CoachForm.scss';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
@@ -70,9 +71,9 @@ class CoachFormTwo extends Component {
 </div>
           {/* <div className='value'>{value}</div> */}
           <div className="HourlyRate-buttons">
-                  <button>Back</button>
+                  <Link to='/addcoach'>Back</Link>
                   <br/>
-                  <button>Save and next</button>
+                  <Link to='/addcoach/03'>Save and next</Link>
               </div>
         </div>
       )
