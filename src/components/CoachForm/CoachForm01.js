@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import { gql } from 'apollo-boost';
+import { Link } from 'react-router-dom';
 
 
-function submitHandler() {
-    axiosWithAuth
-    .post()
-}
 
-const CoachForm = () => {
+const CoachForm = (props) => {
     const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: ""});
 
     return(
@@ -16,7 +12,7 @@ const CoachForm = () => {
             <p className="coach-form-title">
                 This is your InterviewQ coach profile. Seekers will see this information. Write everything that you want seekers to know about you. This is your chance to sell yourself to prospective seekers! 
             </p>
-            <form className="coach-form" onSubmit={submitHandler}>
+            <form className="coach-form" >
 
                 <div className="coach-form-company">
                     <h3>Company</h3>
@@ -83,8 +79,8 @@ const CoachForm = () => {
                     </div>
                 </div>
                 <div className="coach-form-buttons">
-                    <div>Back</div>
-                    <button type="submit">Save and next</button>
+                    <Link to='/'>Back</Link>
+                    <Link to='/02'>Save and next</Link>
                 </div>
             </form>
         </div>
