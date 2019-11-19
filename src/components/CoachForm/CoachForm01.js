@@ -12,7 +12,7 @@ const CoachForm = (setFormState, formState, handleProgress) => {
     
 
     return(
-        <div className="coach-form-container">
+        <div className="coach-form-container"> 
             <h2 className="coach-form-title">Coach Profile</h2>
             <p className="coach-form-title">
                 This is your InterviewQ coach profile. Seekers will see this information. Write everything that you want seekers to know about you. This is your chance to sell yourself to prospective seekers! 
