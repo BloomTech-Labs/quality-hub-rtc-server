@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import DatePicker from './components/DatePicker';
 
 import './index.scss';
+import CoachFormTwo from './components/CoachForm/CoachForm02.js';
 
 function App() {
   const [loggedin, setLoggedin] = useState(false);
@@ -20,8 +21,7 @@ function App() {
 			/>
       <Switch>
       <Route exact path='/' component={InterviewLandingPage}/>
-      <Route path="/hey" component={DatePicker} />
-      <Route path='/addcoach' component={CoachForm}/>
+<Route path="/form02" component={CoachFormTwo}/>
       </Switch>
     </div>
   );
