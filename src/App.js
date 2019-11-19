@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
 
 import InterviewLandingPage from "./components/Landing Page/index.js"
-import CoachForm from "./components/CoachForm/CoachForm01";
+import CoachForm00 from "./components/CoachForm/CoachForm00";
 import NavBar from './components/NavBar';
 import DatePicker from './components/DatePicker';
 
 import './index.scss';
-import CoachFormTwo from './components/CoachForm/CoachForm02.js';
+import CoachFormTwo from './components/CoachForm/CoachForm00.js';
 
 function App() {
   const [loggedin, setLoggedin] = useState(false);
