@@ -1,6 +1,7 @@
 import React from 'react';
 
-const DateColumn = ({ date }) => {
+
+const TimeColumn = ({ date }) => {
   let arr = [];
   for (let i = 0; i < 10; i++) {
     let newDate = new Date(date);
@@ -8,15 +9,15 @@ const DateColumn = ({ date }) => {
     arr.push(newDate);
   }
   return (
-    <div>
-      {date.toString()}
+    <div className='time-column'>
+      {date.toString().substring(0,15)}
       {
         arr.map(date => {
           let hour = date.getHours();
           let str;
           str = (hour <= 11 ? `${hour}:00 AM` : `${hour - 12}:00 PM`)
           str = (hour == 12 ? `${hour}:00 PM` : str);
-          return <p>{str}</p>
+          return <p className="time">{str}</p>
           }
         )
       }
@@ -24,4 +25,4 @@ const DateColumn = ({ date }) => {
   )
 }
 
-export default DateColumn;
+export default TimeColumn;

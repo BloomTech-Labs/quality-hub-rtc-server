@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import DateColumn from './DateColumn';
+import TimeColumn from './TimeColumn';
 
 import './DatePicker.scss';
 const DatePicker = () => {
@@ -51,9 +51,11 @@ const DatePicker = () => {
         <button onClick={handleDateChange} value="">-</button>
         <button onClick={handleDateChange} value={true}>+</button>
         Date Picker
+        <div className="time-columns">
         {weekDates.map(date => 
-          <DateColumn date={date} />
+          <TimeColumn date={date} />
         )}
+        </div>
       </div>
     </div>
   )

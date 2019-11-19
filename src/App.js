@@ -10,7 +10,7 @@ function App() {
   const [loggedin, setLoggedin] = useState(false);
   return (
     <div className="App">
-      <Route path="/hey" component={DatePicker} />
+
       <Route
 				path='/'
 				render={props => (
@@ -19,6 +19,7 @@ function App() {
 			/>
       <Switch>
       <Route exact path='/' component={InterviewLandingPage}/>
+      <Route path="/hey" component={DatePicker} />
       </Switch>
     </div>
   );
