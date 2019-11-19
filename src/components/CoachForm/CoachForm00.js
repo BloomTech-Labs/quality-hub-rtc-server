@@ -10,7 +10,7 @@ import CoachForm03 from './CoachForm03'
 
 const CoachForm00 = () => {
     const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: ""});
-    const [progress, setProgress] = useState(1)
+    const [progress, setProgress] = useState(1) 
 
     useEffect (() => {
         console.log(formState)
