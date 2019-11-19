@@ -5,11 +5,13 @@ import ProgressBar from './ProgressBar'
 import CoachForm01 from './CoachForm01'
 import CoachForm02 from './CoachForm02'
 import CoachForm03 from './CoachForm03'
+import CoachForm04 from './CoachForm04'
+import CoachForm05 from './CoachForm05'
 
 
 
 const CoachForm00 = () => {
-    const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: ""});
+    const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: "", price: ""});
     const [progress, setProgress] = useState(1) 
 
     useEffect (() => {
@@ -29,10 +31,30 @@ const CoachForm00 = () => {
     return (
         <div>
             <ProgressBar progress={progress} />
-            <Route
+            <Route exact path="/addcoach"
                 render={props => (
                     <CoachForm01 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
                 
+                )} 
+            />
+            <Route path="/addcoach/02"
+                render={props => (
+                    <CoachForm02 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                )} 
+            />
+            <Route path="/addcoach/03"
+                render={props => (
+                    <CoachForm03 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                )} 
+            />
+            <Route path="/addcoach/04"
+                render={props => (
+                    <CoachForm04 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                )} 
+            />
+            <Route path="/addcoach/05"
+                render={props => (
+                    <CoachForm05 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
                 )} 
             />
         </div>

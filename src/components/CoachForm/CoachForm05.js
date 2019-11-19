@@ -14,6 +14,8 @@ const CoachForm05 = () => {
             <h2> Your coach profile is live!</h2>
             <br/>
             <h4>You can see it in the coaches</h4>
+            <br/>
+            <Link to='/'>Got to Dashboard</Link>
         </div>
     )
 
