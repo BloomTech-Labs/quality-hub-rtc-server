@@ -57,6 +57,7 @@ class CoachFormTwo extends Component {
         <div className='slider'>
         <h2>Hourly Rate</h2>
           <p>Please set your hourly rate. To get the most jobs, we recommend setting your rate between $20 and $50.</p>
+          <div className='value'>${value}</div>
           <Slider
             min={0}
             max={100}
@@ -65,9 +66,10 @@ class CoachFormTwo extends Component {
             onChange={this.handleChange}
             onChangeComplete={this.handleChangeComplete}
           />
-          <div className='value'>{value}</div>
+          {/* <div className='value'>{value}</div> */}
           <div className="HourlyRate-buttons">
                   <button>Back</button>
+                  <br/>
                   <button>Save and next</button>
               </div>
         </div>
