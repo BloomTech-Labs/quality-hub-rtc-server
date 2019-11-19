@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { Route, Switch, Link } from 'react-router-dom'
 
+import ProgressBar from './ProgressBar'
 import CoachForm01 from './CoachForm01'
 import CoachForm02 from './CoachForm02'
 import CoachForm03 from './CoachForm03'
@@ -15,7 +16,7 @@ const CoachForm00 = () => {
     },[formState])
 
     return (
-        <
+        <ProgressBar />
         <Route
 			render={props => (
 				<CoachForm01 {...props} formState={formState} setFormState={setFormState} />
