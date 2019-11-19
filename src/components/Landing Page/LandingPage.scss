@@ -10,7 +10,7 @@
     background-color: lightgray;
     margin-top: 0;
     border: 1px solid lightgray;
-    padding: 2% 10%;
+    // padding: 2% 10%;
 
     h3{
         display: flex;
@@ -26,4 +26,15 @@ button {
     color: inherit;
     background-color: transparent;
     text-align: left;
+}
+
+
+.Landingpage-contanier{
+    display: flex;
+    width: 80%;
+}
+.Search-dropdowns{
+    margin-left: 8%;
+    width: 30%;
+   
 }
