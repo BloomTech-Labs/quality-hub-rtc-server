@@ -11,7 +11,28 @@ import CoachForm05 from './CoachForm05'
 
 
 const CoachForm00 = () => {
-    const [formState, setFormState] = useState({company: "", position: "", industry: "", description: "", city: "", state: "", price: ""});
+    const [formState, setFormState] = useState({
+      company: "",
+      position: "",
+      industry: "",
+      description: "",
+      city: "",
+      state: "",
+      price: ""
+    });
+
+    const [accounts, setAccounts] = useState({
+      linkedin_url: '',
+      linkedin_switch: false,
+      github_url: '',
+      github_switch: false,
+      website_url: '',
+      website_switch: false,
+      portfolio_url: '',
+      portfolio_switch: false,
+      twitter_url: '',
+      twitter_switch: false,
+  })
     const [progress, setProgress] = useState(1) 
 
     useEffect (() => {
@@ -44,12 +65,12 @@ const CoachForm00 = () => {
             />
             <Route path="/addcoach/03"
                 render={props => (
-                    <CoachForm03 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                    <CoachForm03 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} accounts={accounts} setAccounts={setAccounts} />
                 )} 
             />
             <Route path="/addcoach/04"
                 render={props => (
-                    <CoachForm04 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                    <CoachForm04 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} accounts={accounts} setAccounts={setAccounts} />
                 )} 
             />
             <Route path="/addcoach/05"
@@ -63,4 +84,4 @@ const CoachForm00 = () => {
     )
 }
 
-export default CoachForm00
+export default CoachForm00;
