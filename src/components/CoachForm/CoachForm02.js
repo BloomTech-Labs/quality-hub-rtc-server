@@ -31,8 +31,6 @@ import 'react-rangeslider/lib/index.css';
 
 // }
 
-
-
 function CoachFormTwo () {
 
   const [value, setValue] = useState(0)
