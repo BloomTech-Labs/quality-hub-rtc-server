@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const CoachForm = ({setFormState, formState, history, progress, setProgress}) => {
+const CoachForm = ({setFormState, formState, history, setProgress}) => {
 
 
     function submitHandler () {

@@ -7,7 +7,7 @@ import 'react-rangeslider/lib/index.css';
 
 // }
 
-function CoachFormTwo ({ history, progress, setProgress }) {
+function CoachFormTwo ({ history, progress, setProgress, formState, setFormState }) {
 
   const [value, setValue] = useState(0)
   
@@ -26,6 +26,7 @@ function CoachFormTwo ({ history, progress, setProgress }) {
   function submitHandler () {
     setProgress(3)
     history.push("/addcoach/03")
+    setFormState({...formState, price: value})
   }
 
   function backHandler () {
