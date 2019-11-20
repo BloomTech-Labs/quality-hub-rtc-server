@@ -1,39 +1,39 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
-import { gql } from "apollo-boost";
+import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { gql } from 'apollo-boost';
 
+import { useMutation, useLazyQuery } from '@apollo/react-hooks';
 
-import { useLazyQuery, useMutation } from "@apollo/react-hooks";
-
-import axios from "axios";
+import axios from 'axios';
 
 const GET_USER = gql`
-  query dropdownMenu {
-    me {
-      id
-      first_name
-      last_name
-      email
-      image_url
-    }
-  }
+	query dropdownMenu {
+		me {
+			id
+			first_name
+			last_name
+			email
+			image_url
+		}
+	}
 `;
 
 const EDIT_IMG = gql`
-  mutation EditImage($image_url: String) {
-    update(image_url: $image_url) {
-      image_url
-    }
-  }
+	mutation EditImage($image_url: String) {
+		update(image_url: $image_url) {
+			image_url
+		}
+	}
 `;
 
 const AvatarDropdown = props => {
-  const [getUser, { client, data }] = useLazyQuery(GET_USER);
+	const [getUser, { client, data }] = useLazyQuery(GET_USER);
 
-  const [picture, setPicture] = useState(null);
+	const [picture, setPicture] = useState(null);
 	const [open, setOpen] = useState(false);
 	const [avatarURL, setAvatarURL] = useState('/blankavatar.svg');
 	const [runCount, setRunCount] = useState(0);
+
 
   const node = useRef();
 
@@ -62,45 +62,45 @@ const AvatarDropdown = props => {
 		props.logout();
 	};
 
-  //If you click outside the dropdown menu, the menu will close.
-  const handleOutsideClick = e => {
-    if (props.loggedin) {
-      if (node.current) {
-        if (node.current.contains(e.target)) {
-          return;
-        }
-        setOpen(false);
-      }
-    }
-  };
+	//If you click outside the dropdown menu, the menu will close.
+	const handleOutsideClick = e => {
+		if (props.loggedin) {
+			if (node.current) {
+				if (node.current.contains(e.target)) {
+					return;
+				}
+				setOpen(false);
+			}
+		}
+	};
 
-  useEffect(() => {
-    if (picture) {
-      const formData = new FormData();
-      formData.append("file", picture);
-      formData.append("upload_preset",process.env.REACT_APP_UPLOAD_PRESET
-      );
+	useEffect(() => {
+		if (picture) {
+			const formData = new FormData();
+			formData.append('file', picture);
+			formData.append('upload_preset', process.env.REACT_APP_UPLOAD_PRESET);
 
-      axios
-        .post(
-          `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
-          formData
-        )
-        .then(res => {
-            editImage({ variables: { image_url: res.data.secure_url } });
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    }
-  }, [picture]);
+			axios
+				.post(
+					`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
+					formData,
+				)
+				.then(res => {
+					editImage({ variables: { image_url: res.data.secure_url } });
+				})
+				.catch(err => {
+					console.log(err);
+				});
+		}
+	}, [picture]);
 
-    useEffect(() => {
-        getUser();
-        setRunCount(1);
-   }, []);
+	useEffect(() => {
+		getUser();
+		setRunCount(1);
+	}, []);
 
-  useEffect(() => {
+	useEffect(() => {
+
 		//useEffect runs on intialization of component, so runCount makes sure data is first retrieved
 		if (runCount > 0) {
 			if (data) {
@@ -119,6 +119,7 @@ const AvatarDropdown = props => {
 		}
 		getUser();
 	}, [open]);
+
 
   return (
 		<div ref={node}>

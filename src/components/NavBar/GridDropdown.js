@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 
-
 const GridDropdown = props => {
   const node = useRef();
   const [open, setOpen] = useState(false);
@@ -22,14 +21,14 @@ const GridDropdown = props => {
 
   return (
     <div ref={node}>
+      {/* Styling here needs to be changed to CSS Grid to make it more stable */}
       <img
         src="/grid.svg"
         alt="Grid Menu"
         className="grid-menu grid-icon"
         onClick={e => setOpen(!open)}
       />
-
-    {open && (
+      {open && (
         <div className="dropdown-grid-content dropdown-icons">
           <div className="test-css-grid">
             <div className="box">

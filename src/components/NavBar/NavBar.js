@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import AvatarDropdown from "./AvatarDropdown";
-import GridDropdown from "./GridDropdown";
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import AvatarDropdown from './AvatarDropdown';
+import GridDropdown from './GridDropdown';
 import { useLazyQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
