@@ -16,14 +16,15 @@ const InterviewLandingPage = ({
  return(
         <div className="interview-landing-page">
             <div className="interview-cta">
-            <button>X</button>
+            
                 <h4>Are you interested in becoming a coach? <Link to='/addcoach'>Become a coach now</Link></h4>
+				<button>X</button>
             </div>
             <div className="interview-header">
-            <button>X</button>
                 <h1>Interview Q</h1>
                 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dictum adipiscing amet, sollicitudin arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dictum adipiscing amet, sollicitudin arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dictum adipiscing amet, sollicitudin arcu.</h3>
-
+				<br/>
+				<button>X</button>
             </div>
 
         <div className="Landingpage-contanier">
@@ -40,7 +41,13 @@ const InterviewLandingPage = ({
 						value="company"
 						onChange={handleChange}
 						required>
-						<option>Company</option>
+						<option>Industry</option>
+						<option value="business">Business</option>
+                        <option value="education">Education</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="hr">Human Resources</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="software">Software</option>
 						{/* {companyArray.map(company => (
 							<option value={state} key={state}>
 								{state}
@@ -75,6 +82,12 @@ const InterviewLandingPage = ({
 						onChange={handleChange}
 						required>
 						<option>Price</option>
+						<option value="$0-$20">$0-$20</option>
+                        <option value="$21-$40">$21-$40</option>
+                        <option value="$21-$40">$21-$40</option>
+                        <option value="$81-$100">$81-$100</option>
+                        <option value="$100~">$100~</option>
+                        
 						{/* {companyArray.map(company => (
 							<option value={state} key={state}>
 								{state}

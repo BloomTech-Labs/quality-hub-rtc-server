@@ -32,7 +32,8 @@ const CoachForm00 = () => {
       portfolio_switch: false,
       twitter_url: '',
       twitter_switch: false,
-  })
+  });
+
     const [progress, setProgress] = useState(1) 
 
     useEffect (() => {
@@ -78,6 +79,6 @@ const CoachForm00 = () => {
             />
         </div>
     )
-}
+};
 
-export default CoachForm00
+export default CoachForm00;
