@@ -28,7 +28,6 @@ const GridDropdown = props => {
         className="grid-menu grid-icon"
         onClick={e => setOpen(!open)}
       />
-
       {open && (
         <div className="dropdown-grid-content dropdown-icons">
           <div className="test-css-grid">

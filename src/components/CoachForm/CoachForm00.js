@@ -32,7 +32,8 @@ const CoachForm00 = () => {
       portfolio_switch: false,
       twitter_url: '',
       twitter_switch: false,
-  })
+  });
+
     const [progress, setProgress] = useState(1) 
 
     useEffect (() => {
@@ -53,31 +54,31 @@ const CoachForm00 = () => {
             <ProgressBar progress={progress} />
             <Route exact path="/addcoach"
                 render={props => (
-                    <CoachForm01 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                    <CoachForm01 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} setProgress={setProgress}/>
                 )} 
             />
             <Route path="/addcoach/02"
                 render={props => (
-                    <CoachForm02 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                    <CoachForm02 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} setProgress={setProgress}/>
                 )} 
             />
             <Route path="/addcoach/03"
                 render={props => (
-                    <CoachForm03 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} accounts={accounts} setAccounts={setAccounts} />
+                    <CoachForm03 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} accounts={accounts} setAccounts={setAccounts} setProgress={setProgress}/>
                 )} 
             />
             <Route path="/addcoach/04"
                 render={props => (
-                    <CoachForm04 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} accounts={accounts} setAccounts={setAccounts} />
+                    <CoachForm04 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} accounts={accounts} setAccounts={setAccounts} setProgress={setProgress}/>
                 )} 
             />
             <Route path="/addcoach/05"
                 render={props => (
-                    <CoachForm05 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress}/>
+                    <CoachForm05 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} setProgress={setProgress}/>
                 )} 
             />
         </div>
     )
-}
+};
 
-export default CoachForm00
+export default CoachForm00;

@@ -34,27 +34,28 @@ const AvatarDropdown = props => {
 	const [avatarURL, setAvatarURL] = useState('/blankavatar.svg');
 	const [runCount, setRunCount] = useState(0);
 
-	const node = useRef();
 
-	const [editImage] = useMutation(EDIT_IMG, {
-		update(
-			cache,
-			{
-				data: {
-					update: { image_url },
-				},
-			},
-		) {
-			const { me } = cache.readQuery({ query: GET_USER });
-			cache.writeQuery({
-				query: GET_USER,
-				data: { me: { ...me, image_url } },
-			});
-		},
-	});
+  const node = useRef();
 
-	const logout = () => {
-		client.clearStore(); //remove token from cache
+  const [editImage] = useMutation(EDIT_IMG, {
+    update(
+      cache,
+      {
+        data: {
+          update: { image_url }
+        }
+      }
+    ) {
+      const { me } = cache.readQuery({ query: GET_USER });
+      cache.writeQuery({
+        query: GET_USER,
+        data: { me: { ...me, image_url } }
+      });
+    }
+  });
+
+  const logout = () => {
+    client.clearStore(); //remove token from cache
 		document.removeEventListener('mousedown', handleOutsideClick);
 		setOpen(false);
 		props.setLoggedin(false);
@@ -99,6 +100,7 @@ const AvatarDropdown = props => {
 	}, []);
 
 	useEffect(() => {
+
 		//useEffect runs on intialization of component, so runCount makes sure data is first retrieved
 		if (runCount > 0) {
 			if (data) {
@@ -118,7 +120,8 @@ const AvatarDropdown = props => {
 		getUser();
 	}, [open]);
 
-	return (
+
+  return (
 		<div ref={node}>
 			<img
 				src={avatarURL}
@@ -188,7 +191,7 @@ const AvatarDropdown = props => {
 				</div>
 			)}
 		</div>
-	);
+  );
 };
 
 export default AvatarDropdown;
