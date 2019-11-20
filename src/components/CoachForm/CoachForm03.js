@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 import Toggle from 'react-toggle'// docs on this---> https://github.com/aaronshaf/react-toggle
 import "react-toggle/style.css"  //                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -11,21 +12,7 @@ import portfolio from '../../icons/portfolio.svg'
 import twitter from '../../icons/twitter.svg'
 
 
-const CoachForm03 = props => {
-    console.log(props)
-
-    const [accounts, setAccounts] = useState({
-        linkedin_url: '',
-        linkedin_switch: false,
-        github_url: '',
-        github_switch: false,
-        website_url: '',
-        website_switch: false,
-        portfolio_url: '',
-        portfolio_switch: false,
-        twitter_url: '',
-        twitter_switch: 'false',
-    })
+const CoachForm03 = ({ accounts, setAccounts }) => {
 
     const userInput = e => {
         setAccounts({
@@ -42,6 +29,7 @@ const CoachForm03 = props => {
         })
         // console.log(accounts)
     }
+
 
 
     return (
@@ -71,8 +59,9 @@ const CoachForm03 = props => {
                 <Toggle icons={false} name='twitter_switch' value={accounts.twitter_switch} defaultChecked={false} onChange={toggleSwitch}/>
             </div>
             <div>
-                <button>Back</button>
-                <button>Save and next</button>
+                <Link to='/addcoach/02'>Back</Link>
+                    <br/>
+                <Link to='/addcoach/04'>Save and next</Link>
             </div>
         </OtherAccounts>
     )

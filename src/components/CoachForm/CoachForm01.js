@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const CoachForm = (setFormState, formState, handleProgress) => {
-    function submitHandler() {
-    //     axiosWithAuth
-    //     .post()
-    }
+const CoachForm = ({setFormState, formState, handleProgress}) => {
+
 
     
     const [progress, setProgress] = useState(1)
@@ -25,7 +22,7 @@ const CoachForm = (setFormState, formState, handleProgress) => {
                         name="company"
                         placeholder="Company Name"
                         value={formState.company}
-                        onChange={event => {console.log(formState); return setFormState({...formState, company: event.target.value})}}
+                        onChange={event => setFormState({...formState, company: event.target.value})}
                         />
                 </div>
                 <div className="coach-form-position">
@@ -35,7 +32,7 @@ const CoachForm = (setFormState, formState, handleProgress) => {
                         name="position"
                         placeholder="Position Title"
                         value={formState.position}
-                        onChange={event => {console.log(formState); return setFormState({...formState, position: event.target.value})}}
+                        onChange={event =>  setFormState({...formState, position: event.target.value})}
                         />
                 </div>
                 <div className="coach-form-industry">
@@ -57,7 +54,7 @@ const CoachForm = (setFormState, formState, handleProgress) => {
                         name="description"
                         placeholder="Enter Name"
                         value={formState.description}
-                        onChange={event => {console.log(formState); return setFormState({...formState, description: event.target.value})}}
+                        onChange={event => setFormState({...formState, description: event.target.value})}
                         />
                 </div>
                 <div className="coach-form-location">
@@ -68,7 +65,7 @@ const CoachForm = (setFormState, formState, handleProgress) => {
                             name="city"
                             placeholder="Enter Name"
                             value={formState.city}
-                            onChange={event => {console.log(formState); return setFormState({...formState, city: event.target.value})}}
+                            onChange={event => setFormState({...formState, city: event.target.value})}
                         />
                     </div>
                     <div className="coach-form-state">
@@ -78,15 +75,15 @@ const CoachForm = (setFormState, formState, handleProgress) => {
                             name="state"
                             placeholder="Enter Name"
                             value={formState.state}
-                            onChange={event => {console.log(formState); return setFormState({...formState, state: event.target.value})}}
+                            onChange={event => setFormState({...formState, state: event.target.value})}
                         />
                     </div>
                 </div>
                 <div className="coach-form-buttons">
-                    <div onClick={handleProgress}>Back</div>
-                    <button type="submit" value="next" onClick={handleProgress}>Save and next</button>
-                    <Link to='/'>Back</Link>
-                    <Link to='/02'>Save and next</Link>
+                    {/* <div onClick={handleProgress}>Back</div> */}
+                    {/* <button type="submit" value="next" onClick={handleProgress}>Save and next</button> */}
+                    <Link to='/' >Back</Link>
+                    <Link to='/addcoach/02'>Save and next</Link>
 
                 </div>
             </form>
