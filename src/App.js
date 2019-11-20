@@ -8,6 +8,7 @@ import DatePicker from './components/DatePicker';
 import CoachList from './components/CoachList';
 
 import './index.scss';
+import './global/index.scss';
 import CoachFormTwo from './components/CoachForm/CoachForm02.js';
 
 function App() {

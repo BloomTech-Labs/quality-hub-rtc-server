@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import styled from 'styled-components'
+import './CoachForm03.scss'
 import { Link } from 'react-router-dom';
 
 import Toggle from 'react-toggle'// docs on this---> https://github.com/aaronshaf/react-toggle
@@ -33,8 +33,8 @@ const CoachForm03 = ({ accounts, setAccounts }) => {
 
 
     return (
-        <OtherAccounts>
-            <div>
+        <div className='CoachForm03-container'>
+            <div className='CoachForm03-header'>
                 <h3>Linked Accounts</h3>
                 <p>The links that you provide and enable will be visable to seekers on the coach list</p>
             </div>
@@ -63,12 +63,12 @@ const CoachForm03 = ({ accounts, setAccounts }) => {
                     <br/>
                 <Link to='/addcoach/04'>Save and next</Link>
             </div>
-        </OtherAccounts>
+        </div>
     )
 }
 
-const OtherAccounts = styled.div`
-    text-align: center;
-`;
+// const OtherAccounts = styled.div`
+//     text-align: center;
+// `;
 
 export default CoachForm03;
