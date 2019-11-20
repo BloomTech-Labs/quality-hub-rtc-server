@@ -1,6 +1,44 @@
+.search-box {
+  margin: auto;
+  width: 40%;
+  border: 1px solid rgba(0, 0, 0, .15);
+  text-align:center;
+  border-radius: 8px;
+  padding-top: 20px;
+  box-shadow:  0px 4px 5px 4px rgba(200, 200, 200, .5), 0px 10px 50px 15px rgba(0, 0, 0, .1);
+  .search-form {
+    input {
+      border-radius: 2px;
+      border: 0;
+      background-color: rgba(50,50,50, .05);
+      margin: 10px;
+      padding: 10px;
+      width: 50%;
+    }
+    select { 
+      margin: 0rem 0.5rem;
+    }
+  }
+  .search-button {
+    background-color: #0055ff;
+    color: white;
+    padding: 10px 40px; 
+    position: relative;
+    top: 20px;
+    border-radius: 10px;
+  }
+}
 .coach-list{
-    display: flex;
-    justify-content: flex-end;
-    margin: 2%;
-    flex-wrap:wrap;
+  margin: 2% auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.coach-list-container {
+  hr {
+    margin: 5% auto;
+    border: 1px solid rgba(0,0,0, .2);
+    width: 30%;
+  }
 }

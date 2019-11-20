@@ -1,44 +1,36 @@
 .coach-card{
     display: flex;
-    width: 65%;
+    width: 30%;
     padding: 1%;
     box-shadow: 2px 2px 5px gray;
     border: 1px solid gray;
+    margin: 1% auto;
     .coach-photo{
         img{
             clip-path: circle(50% at 50% 50%);
-            width: 200px;
+            width: 150px;
         }
     }
-    .coach-text{
-        .coach-card-top{
-            display: flex;
-            .coach-card-top-right{
-                margin-left: 50%;
-                width: 100%;
-                span{
-                    margin-right: 20%;
-                }
-        }
-        .coach-card-top-left{
-            width: 100%;
-        }
-    }
-    .coach-card-bottom{
+    .coach-text {
+      width: 100%;
+      .flex-sect {
         display: flex;
-        flex-direction: row;
-        width: 100%;
-    
-        button{
-            margin-left: 10%;
-            width: 300px;
-            height: 50px;
-            background-color: lightgray;
-            color: gray;
-            padding: 1%;
-            border-radius: 5px;
-            align-self: flex-end;
+        .left-side {
+          width: 70%;
         }
+      }
+      .interview-button {
+        padding: 5px 10px;
+        background-color: blue;
+        text-align: center;
+        color:white;
+        border-radius: 15px;
+      }
+      .footer {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
     }
-}
+
 }
