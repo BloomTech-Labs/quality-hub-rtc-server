@@ -33,7 +33,7 @@ const CoachForm00 = () => {
       twitter_url: '',
       twitter_switch: false,
   });
-  
+
     const [progress, setProgress] = useState(1) 
 
     useEffect (() => {
@@ -47,8 +47,7 @@ const CoachForm00 = () => {
       } else {
         setProgress(prog => prog - 1)
       }
-
-    };
+    }
 
     return (
         <div>
@@ -80,8 +79,6 @@ const CoachForm00 = () => {
                 )} 
             />
         </div>
-
-
     )
 };
 

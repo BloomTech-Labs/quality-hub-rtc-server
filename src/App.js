@@ -5,6 +5,7 @@ import InterviewLandingPage from "./components/Landing Page/index.js"
 import CoachForm00 from "./components/CoachForm/CoachForm00";
 import NavBar from './components/NavBar';
 import DatePicker from './components/DatePicker';
+import CoachList from './components/CoachList';
 
 import './index.scss';
 import CoachFormTwo from './components/CoachForm/CoachForm00.js';
@@ -21,8 +22,11 @@ function App() {
 			/>
       <Switch>
       <Route exact path='/' component={InterviewLandingPage}/>
+
       <Route path="/hey" component={DatePicker} />
       <Route path='/addcoach' component={CoachForm00}/>
+      <Route path='/coachlist' component={CoachList} />
+
       </Switch>
     </div>
   );
