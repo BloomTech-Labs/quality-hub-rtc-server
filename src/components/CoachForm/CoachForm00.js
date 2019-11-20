@@ -46,7 +46,6 @@ const CoachForm00 = () => {
       } else {
         setProgress(prog => prog - 1)
       }
-
     }
 
     return (
@@ -78,8 +77,6 @@ const CoachForm00 = () => {
                 )} 
             />
         </div>
-
-
     )
 }
 
