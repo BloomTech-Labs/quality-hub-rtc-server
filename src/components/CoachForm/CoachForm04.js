@@ -4,9 +4,11 @@ import { AST_PropAccess } from 'terser';
 
 const CoachForm = ({setFormState, formState, handleProgress, history}) => {
 
-    function submitHandler () {
-        console.log("this is where the gql goes")
-        history.push('../')
+
+    function SumbitForms (){
+        // Post mutation here 
+
+        history.push('/addCoach/05');
     }
     
     const [progress, setProgress] = useState(1)
@@ -57,7 +59,7 @@ const CoachForm = ({setFormState, formState, handleProgress, history}) => {
             </div>
             <div>
                 <Link>Back</Link>
-                <button onClick={submitHandler}>Publish</button>
+                <button onClick={SumbitForms}>Publish</button>
             </div>
 
         </div>
