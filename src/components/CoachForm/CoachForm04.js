@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AST_PropAccess } from 'terser';
 
-const CoachForm = ({setFormState, formState, handleProgress, history, accounts, setAccounts}) => {
+const CoachForm = ({setFormState, formState, history, accounts, setAccounts, progress, setProgress}) => {
 
     function submitHandler () {
+        setProgress(5)
         console.log("this is where the gql goes")
-        history.push('/addcoach/05')
+        history.push("/addcoach/05")
     }
     
-    const [progress, setProgress] = useState(1)
-    
+    function backHandler () {
+        setProgress(3)
+        history.push("/addcoach/03")
+    }
+     
     return(
         <div>
             <div className="review-form-container">
@@ -56,8 +60,9 @@ const CoachForm = ({setFormState, formState, handleProgress, history, accounts, 
                 </div>
             </div>
             <div>
-                <Link to="/addcoach/03">Back</Link>
-                <button onClick={submitHandler}>Publish</button>
+                <button onClick={backHandler} >Back</button>
+                <br/>
+                <button onClick={submitHandler} >Publish</button>
             </div>
 
         </div>

@@ -31,7 +31,7 @@ import 'react-rangeslider/lib/index.css';
 
 // }
 
-function CoachFormTwo () {
+function CoachFormTwo ({ history, progress, setProgress }) {
 
   const [value, setValue] = useState(0)
   
@@ -46,6 +46,16 @@ function CoachFormTwo () {
   const handleChangeComplete = () => {
     console.log('Change event completed')
   };
+
+  function submitHandler () {
+    setProgress(3)
+    history.push("/addcoach/03")
+  }
+
+  function backHandler () {
+    setProgress(1)
+    history.push("/addcoach")
+  }
 
   return (
     <div className='slider'>
@@ -64,9 +74,9 @@ function CoachFormTwo () {
       </div>
       {/* <div className='value'>{value}</div> */}
       <div className="HourlyRate-buttons">
-        <Link to='/addcoach'>Back</Link>
+        <button onClick={backHandler} >Back</button>
         <br/>
-        <Link to='/addcoach/03'>Save and next</Link>
+        <button onClick={submitHandler} >Save and next</button>
       </div>
     </div>
   )
