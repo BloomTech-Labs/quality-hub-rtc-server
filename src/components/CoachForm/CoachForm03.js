@@ -12,7 +12,7 @@ import portfolio from '../../icons/portfolio.svg'
 import twitter from '../../icons/twitter.svg'
 
 
-const CoachForm03 = ({ accounts, setAccounts }) => {
+const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) => {
 
     const userInput = e => {
         setAccounts({
@@ -28,6 +28,16 @@ const CoachForm03 = ({ accounts, setAccounts }) => {
             [e.target.name]: e.target.checked
         })
         // console.log(accounts)
+    }
+
+    function submitHandler () {
+        setProgress(4)
+        history.push("/addcoach/04")
+    }
+    
+    function backHandler () {
+        setProgress(2)
+        history.push("/addcoach/02")
     }
 
 
@@ -59,9 +69,9 @@ const CoachForm03 = ({ accounts, setAccounts }) => {
                 <Toggle icons={false} name='twitter_switch' value={accounts.twitter_switch} defaultChecked={false} onChange={toggleSwitch}/>
             </div>
             <div>
-                <Link to='/addcoach/02'>Back</Link>
-                    <br/>
-                <Link to='/addcoach/04'>Save and next</Link>
+                <button onClick={backHandler} >Back</button>
+                <br/>
+                <button onClick={submitHandler} >Save and next</button>
             </div>
         </OtherAccounts>
     )
