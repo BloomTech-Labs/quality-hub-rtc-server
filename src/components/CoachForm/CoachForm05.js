@@ -21,7 +21,7 @@ const CoachForm05 = ({ history }) => {
            <img src={Check} alt='succesCheck'/>
              <h2> Your coach profile is live!</h2>
                   <br/>
-                <h4>You can see it in the coaches</h4>
+                <h4>You can see it in the coaches list now. You can make changes to it in your dashboard.</h4>
                   <br/>
                   <button onClick={submitHandler}>Go To Dashboard</button>
         </div>
