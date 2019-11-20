@@ -22,7 +22,9 @@ function App() {
       <Switch>
       <Route exact path='/' component={InterviewLandingPage}/>
       <Route path="/hey" component={DatePicker} />
-      <Route path='/addcoach' component={CoachForm00}/>
+      <Route path='/addcoach' render={props => (
+					<CoachForm00 {...props}/>
+				)}/>
       </Switch>
     </div>
   );
