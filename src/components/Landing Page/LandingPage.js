@@ -41,7 +41,13 @@ const InterviewLandingPage = ({
 						value="company"
 						onChange={handleChange}
 						required>
-						<option>Company</option>
+						<option>Industry</option>
+						<option value="business">Business</option>
+                        <option value="education">Education</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="hr">Human Resources</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="software">Software</option>
 						{/* {companyArray.map(company => (
 							<option value={state} key={state}>
 								{state}
@@ -76,6 +82,12 @@ const InterviewLandingPage = ({
 						onChange={handleChange}
 						required>
 						<option>Price</option>
+						<option value="$0-$20">$0-$20</option>
+                        <option value="$21-$40">$21-$40</option>
+                        <option value="$21-$40">$21-$40</option>
+                        <option value="$81-$100">$81-$100</option>
+                        <option value="$100~">$100~</option>
+                        
 						{/* {companyArray.map(company => (
 							<option value={state} key={state}>
 								{state}
