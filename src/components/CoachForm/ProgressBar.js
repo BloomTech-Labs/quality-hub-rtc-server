@@ -3,6 +3,7 @@ import React from 'react';
 import './ProgressBar.scss';
 
 export default function ProgressBar({ progress }) {
+	console.log(progress)
 	return (
 		<div className='prog-bar-center'>
 			<div className='prog-bar'>
