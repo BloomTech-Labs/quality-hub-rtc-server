@@ -1,28 +1,30 @@
 import React from 'react';
 import './CoachCard.scss'
 
-const CoachCard = () => {
-
+const CoachCard = ({post}) => {
+  console.log(post);
     return(
         <div className="coach-card">
             <div className="coach-photo">
                 <img src="https://www.birdorable.com/img/bird/th440/california-quail.png" />
             </div>
             <div className="coach-text">
-                <div className="coach-card-top">
-                    <div className="coach-card-top-left">
-                <h3>Coach Name</h3>
-                <h4>Coach Title</h4>
+              <div className="flex-sect">
+                <div className="left-side">
+                    <h3>Coach Name</h3>
+                    <h4>{post.position} Sunnyvale, CA</h4>
+                    <p>{post.description}</p>
                 </div>
-                <div className="coach-card-top-right">
-                    <h4><span>&#x2605; 4.9</span>     $60 per hour</h4>
-                    <h4>Sunnyvale, CA</h4>
+                <div className="right-side">
+                    <h4><span>&#x2605; 4.9</span>   ${post.price} / hour</h4>
+
+
                 </div>
-                </div>
-                <div className="coach-card-bottom">
-                <p>Lorem quailum birdor sit covey, flight adipiscing quailit. Vitae dictum  covey quaility amet, sollicitudin quailcu. Lorem quailum birdor sit covey, flight adipiscing quailit. Vitae dictum  covey quaility amet, sollicitudin quailcu. </p>
-                <button disabled>Request Interview</button>
-                </div>
+              </div>
+              <div className="footer">
+                <p>Links go here</p>
+                <button className="interview-button" disabled>Request Interview</button>
+              </div>
             </div>
         </div>
     )

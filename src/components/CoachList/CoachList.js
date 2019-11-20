@@ -1,10 +1,24 @@
 import React from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+
 import CoachCard from './CoachCard.js'
 import './CoachList.scss'
 
+const GET_POSTS = gql`
+  query {
+    posts {
+      price
+      position
+      description
+    }
+  }
+`
+
 const CoachList = () => {
+  const { loading, error, data } = useQuery(GET_POSTS);
     return(
-      <div>
+      <div className="coach-list-container">
         <h1>Interview Q</h1>
         <div className="search-box">
           Search Information
@@ -24,13 +38,14 @@ const CoachList = () => {
             <button className="search-button">Search</button>
           </form>
         </div>
-        <div className="coach-list">
-        
-        <CoachCard />
-        <CoachCard />
-        <CoachCard />
-        <CoachCard />
+        <hr />
+        { data && <div className="coach-list">
+          {data.posts.map(post => 
+            <CoachCard post={post} />
+          )}
+
         </div>
+      }
       </div>
     )
 }
