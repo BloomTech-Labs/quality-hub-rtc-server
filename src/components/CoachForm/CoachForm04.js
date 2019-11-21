@@ -1,13 +1,48 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 import { AST_PropAccess } from 'terser';
 
 const CoachForm = ({setFormState, formState, history, accounts, setAccounts, progress, setProgress}) => {
+    
+    const ADD_POST = gql`
+        mutation createPost(
+            $price: Int!
+            $position: String!
+            $industryName: String!
+            $description: String!
+            $tagString: String
+        ) {
+            createPost(
+                price: $price
+                position: $position
+                industryName: $industryName
+                description: $description
+                tagString: $tagString
+            ) {
+                id
+                position
+            }
+        }
+    `;
+    const [addPost, error] = useMutation(ADD_POST);
 
     function submitHandler () {
         setProgress(5)
-        console.log("this is where the gql goes")
-        history.push("/addcoach/05")
+
+        addPost({ formState })
+        .then(results => {
+            console.log(results)
+            setTimeout(() => {
+                //Do we need to push to dashboard after sign up?
+                history.push("/addcoach/05")
+            }, 3000);
+        })
+        .catch(err => {
+            console.log(err)
+            console.log(error)
+        })
     }
     
     function backHandler () {
