@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const CoachForm = ({setFormState, formState, history, setProgress}) => {
+const CoachForm = ({setFormState, formState, history, setProgress, industriesData, data}) => {
 
 
     function submitHandler () {
@@ -14,6 +14,7 @@ const CoachForm = ({setFormState, formState, history, setProgress}) => {
     }
     
     
+    console.log(data)
     return(
         <div className="coach-form-container"> 
             <h2 className="coach-form-title">Coach Profile</h2>
@@ -45,13 +46,13 @@ const CoachForm = ({setFormState, formState, history, setProgress}) => {
                 <div className="coach-form-industry">
                     <h3>Industry</h3>
                     <select>
-                        <option value={null}>Select Industry</option>
-                        <option value="business">Business</option>
-                        <option value="education">Education</option>
-                        <option value="engineering">Engineering</option>
-                        <option value="hr">Human Resources</option>
-                        <option value="marketing">Marketing</option>
-                        <option value="software">Software</option>
+                        {industriesData &&
+                               industriesData.industries.map(industries => {
+                                   return (
+                                       <option value={industries.name} key={industries.name}>{industries.name}</option>
+                                   )
+                               }) 
+                        }
                     </select>
                 </div>
                 <div className="coach-form-description">

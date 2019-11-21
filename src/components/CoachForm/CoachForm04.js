@@ -35,7 +35,7 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
         .then(results => {
             console.log(results)
             setTimeout(() => {
-                //Do we need to push to dashboard after sign up?
+
                 history.push("/addcoach/05")
             }, 3000);
         })
