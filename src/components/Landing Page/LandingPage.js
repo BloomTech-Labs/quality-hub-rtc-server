@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../NavBar';
 import './LandingPage.scss';
-import SampleCard from '../SampleCard';
+import CoachList from '../CoachList/CoachList';
 import {Link} from 'react-router-dom'
 
 const InterviewLandingPage = ({
@@ -114,7 +114,7 @@ const InterviewLandingPage = ({
                     </div>
 				</div>
             <div className="Coach-List">
-                <SampleCard />
+                <CoachList />
                 </div>
             </div>
             
