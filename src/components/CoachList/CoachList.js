@@ -44,12 +44,15 @@ const CoachList = () => {
           <form className="search-form">
             <input placeholder="Search by keyword..." />
             <div>
+              Price Range
               <select>
                 <option>Hi</option>
               </select>
+              Industry
               <select>
                 <option>Hi</option>
               </select>
+              Order by
               <select>
                 <option>Hi</option>
               </select>
