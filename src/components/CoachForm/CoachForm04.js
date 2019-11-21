@@ -13,6 +13,7 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
             $industryName: String!
             $description: String!
             $tagString: String
+            $coachEmail: String!
         ) {
             createPost(
                 price: $price
@@ -20,9 +21,10 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
                 industryName: $industryName
                 description: $description
                 tagString: $tagString
+                coachEmail: $coachEmail
             ) {
                 id
-                position
+                coachEmail
             }
         }
     `;
