@@ -35,6 +35,7 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
         .then(results => {
             console.log(results)
             setTimeout(() => {
+
                 history.push("/addcoach/05")
             }, 3000);
         })
