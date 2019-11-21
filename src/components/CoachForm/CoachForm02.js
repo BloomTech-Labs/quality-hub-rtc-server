@@ -25,7 +25,7 @@ function CoachFormTwo ({ history, progress, setProgress, formState, setFormState
 
   function submitHandler () {
     setProgress(3)
-    history.push("/addcoach/03")
+    history.push("/addcoach/04")
     setFormState({...formState, price: value})
   }
 
