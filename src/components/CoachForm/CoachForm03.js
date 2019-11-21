@@ -31,12 +31,12 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
     }
 
     function submitHandler () {
-        setProgress(4)
+        setProgress(3)
         history.push("/addcoach/04")
     }
     
     function backHandler () {
-        setProgress(2)
+        setProgress(1)
         history.push("/addcoach/02")
     }
 

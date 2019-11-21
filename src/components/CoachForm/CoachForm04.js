@@ -31,7 +31,7 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
     const [addPost, error] = useMutation(ADD_POST);
 
     function submitHandler () {
-        setProgress(5)
+        setProgress(4)
 
         addPost({ formState })
         .then(results => {
@@ -48,8 +48,8 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
     }
     
     function backHandler () {
-        setProgress(3)
-        history.push("/addcoach/03")
+        setProgress(2)
+        history.push("/addcoach/02")
     }
      
     return(
