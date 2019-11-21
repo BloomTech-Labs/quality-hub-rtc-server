@@ -47,9 +47,9 @@ const NavBar = ({ loggedin, setLoggedin, history }) => {
 			{/* Animated quailnana flying across the screen */}
 			<div className='nav-left'>
 				{/* <div className="bird"></div> */}
-				<NavLink to='/'>
+				<a href='https://qualityhub.netlify.com'>
 					<h2>QualityHub</h2>
-				</NavLink>
+				</a>
 				{/* Spinning Quail */}
 				{/* <img
           src="http://clipartmag.com/images/quail-clipart-1.jpg"
@@ -63,11 +63,13 @@ const NavBar = ({ loggedin, setLoggedin, history }) => {
 				{/* If you're not logged in, show sign in and sign up buttons */}
 				{!loggedin && (
 					<>
-						<NavLink to='signin'> Sign In </NavLink>
-						<NavLink to='signup' className='signup-link'>
+						<a href='https://qualityhub.netlify.com/signin'> Sign In </a>
+						<a
+							href='https://qualityhub.netlify.com/signup'
+							className='signup-link'>
 							{' '}
 							Sign Up{' '}
-						</NavLink>
+						</a>
 					</>
 				)}
 
