@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import './CoachForm03.scss'
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
             ...accounts,
             [e.target.name]: e.target.value
         })
-        // console.log(accounts)
+        console.log(accounts)
     }
 
     const toggleSwitch = e => {
@@ -27,7 +27,7 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
             ...accounts,
             [e.target.name]: e.target.checked
         })
-        // console.log(accounts)
+        console.log(accounts)
     }
 
     function submitHandler () {
@@ -39,6 +39,8 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
         setProgress(2)
         history.push("/addcoach/02")
     }
+
+    
 
     return (
         <div className='CoachForm03-container'>
@@ -60,7 +62,7 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
                     <Toggle 
                         icons={false} 
                         name='linkedin_switch' 
-                        defaultChecked={false} 
+                        checked={accounts.linkedin_switch} 
                         onChange={toggleSwitch}
                     />
                 </div>
@@ -78,8 +80,7 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
                     <Toggle 
                         icons={false} 
                         name='github_switch' 
-                        value={accounts.github_switch} 
-                        defaultChecked={false} 
+                        checked={accounts.github_switch}
                         onChange={toggleSwitch}
                     />
                 </div>
@@ -90,15 +91,15 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
                     <input 
                         placeholder='Website URL...' 
                         name='website_url'  
-                        type='url' value={accounts.website_url} 
+                        type='url' 
+                        value={accounts.website_url} 
                         onChange={userInput}
                     />
                     <Toggle 
                         icons={false} 
-                        name='website_switch' 
-                        value={accounts.website_switch} 
-                        defaultChecked={false} 
+                        name='website_switch'  
                         onChange={toggleSwitch}
+                        checked={accounts.website_switch}
                     />
                 </div>
                 <div className='CoachForm03-row-white'>
@@ -115,8 +116,7 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
                     <Toggle 
                         icons={false} 
                         name='portfolio_switch' 
-                        value={accounts.portfolio_switch} 
-                        defaultChecked={false} 
+                        checked={accounts.portfolio_switch}
                         onChange={toggleSwitch}
                     />
                 </div>
@@ -133,8 +133,7 @@ const CoachForm03 = ({ accounts, setAccounts, progress, history, setProgress }) 
                     <Toggle 
                         icons={false} 
                         name='twitter_switch' 
-                        value={accounts.twitter_switch} 
-                        defaultChecked={false} 
+                        checked={accounts.twitter_switch}
                         onChange={toggleSwitch}
                     />
                 </div>

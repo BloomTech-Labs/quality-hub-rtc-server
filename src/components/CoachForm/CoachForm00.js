@@ -8,9 +8,44 @@ import CoachForm03 from './CoachForm03'
 import CoachForm04 from './CoachForm04'
 import CoachForm05 from './CoachForm05'
 
+import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/react-hooks';
+
+const GET_USER = gql`
+    query {
+        me {
+            linkedin_url
+            github_url
+            personal_url
+            portfolio_url
+            twitter_url
+            city
+            state
+        }
+    }
+`
+
+const INDUSTRIES = gql`
+    query {
+        industries {
+            name
+        }
+    }
+`;
 
 
 const CoachForm00 = () => {
+
+    // for sure take this out soon // like as soon as auth0 happens
+    useEffect(() => {
+        localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNrMnMxZmIydTAwNnYwNzczdjI4MmIza20iLCJlbWFpbCI6ImRhbkBxdWFpbC5jb20iLCJpYXQiOjE1NzQzNjM5NzUsImV4cCI6MTU3NDQwNzE3NX0.Ay63IqaVSQZmLgEjOEMOvb_NBQ0vLNepzn_NbaDsaMQ')
+    })
+
+    const {data, error} = useQuery(GET_USER)
+    const {data: industriesData} = useQuery(INDUSTRIES)
+
+    console.log(data)
+    
     const [formState, setFormState] = useState({
       company: "",
       position: "",
@@ -54,7 +89,7 @@ const CoachForm00 = () => {
             <ProgressBar progress={progress} />
             <Route exact path="/addcoach"
                 render={props => (
-                    <CoachForm01 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} setProgress={setProgress}/>
+                    <CoachForm01 {...props} formState={formState} setFormState={setFormState} handleProgress={handleProgress} setProgress={setProgress} industriesData={industriesData}/>
                 )} 
             />
             <Route path="/addcoach/02"
