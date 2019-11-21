@@ -11,12 +11,31 @@ const GET_POSTS = gql`
       price
       position
       description
+      industry {
+        name
+      }
+      tags {
+        name
+      }
+      coach {
+        first_name
+        last_name
+        city
+        state
+        image_url
+        personal_url
+        blog_url
+        twitter_url
+        portfolio_url
+        linkedin_url
+        github_url
+      }
     }
   }
 `
 
 const CoachList = () => {
-  const { loading, error, data } = useQuery(GET_POSTS);
+  const { loading, error, data } = useQuery(GET_POSTS)
     return(
       <div className="coach-list-container">
         <h1>Interview Q</h1>
