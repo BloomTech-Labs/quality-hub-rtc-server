@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
-import CoachCard from './CoachCard.js'
+import CoachCard from './CoachCard'
+import FilterList from './FilterList';
 import './CoachList.scss'
 
 const GET_POSTS = gql`
@@ -36,29 +37,13 @@ const GET_POSTS = gql`
 
 const CoachList = () => {
   const { loading, error, data } = useQuery(GET_POSTS)
+  const [fields, setFields] = useState({tag:"", price: "", industry: "", orderBy: ""})
     return(
       <div className="coach-list-container">
         <h1>Interview Q</h1>
         <div className="search-box">
           Search Information
-          <form className="search-form">
-            <input placeholder="Search by keyword..." />
-            <div>
-              Price Range
-              <select>
-                <option>Hi</option>
-              </select>
-              Industry
-              <select>
-                <option>Hi</option>
-              </select>
-              Order by
-              <select>
-                <option>Hi</option>
-              </select>
-            </div>
-            <button className="search-button">Search</button>
-          </form>
+          <FilterList fields={fields} setFields={setFields}/>
         </div>
         <hr />
         { data && <div className="coach-list">

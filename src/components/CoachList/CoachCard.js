@@ -3,7 +3,6 @@ import './CoachCard.scss'
 import { tag } from 'postcss-selector-parser';
 
 const CoachCard = ({post}) => {
-  console.log(post);
   let { coach } = post;
     return(
         <div className="coach-card">
