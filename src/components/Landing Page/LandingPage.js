@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LandingPage.scss';
 
 import LandingPageCTA from './LandingPageCTA';
@@ -8,6 +8,7 @@ import Search from '../Search';
 import CoachList from '../CoachList/CoachList';
 
 export default function InterviewLandingPage() {
+	const [fields, setFields] = useState({tag:"", price: "", industry: "", orderBy: ""})
 	return (
 		<div>
 			<LandingPageCTA />
@@ -16,7 +17,7 @@ export default function InterviewLandingPage() {
 				<QNav />
 
 				<div className='landingpage-container'>
-					<Search />
+					<Search setFields={setFields} fields={fields} />
 					<div className='Coach-List'>
 						<CoachList />
 					</div>

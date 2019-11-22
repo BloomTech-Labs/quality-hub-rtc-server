@@ -3,7 +3,6 @@ import './CoachCard.scss'
 import { tag } from 'postcss-selector-parser';
 
 const CoachCard = ({post}) => {
-  console.log(post);
   let { coach } = post;
     return(
         <div className="coach-card">
@@ -14,21 +13,18 @@ const CoachCard = ({post}) => {
               <div className="flex-sect">
                 <div className="left-side">
                     <h3>{coach.first_name} {coach.last_name}</h3>
-                    <h4>{post.position} {coach.city}, {coach.state}}</h4>
+                    <h4>{post.position} {coach.city}, {coach.state}</h4>
                     <p>{post.description}</p>
                     <p>{post.industry.name}</p>
                 </div>
                 <div className="right-side">
                     <h4><span>&#x2605; 4.9</span>   ${post.price} / hour</h4>
-
-
                 </div>
               </div>
               <div className="footer">
                 <p>Links go here</p>
                 <div>
                   {post.tags.map(tag => <p>{tag.name}</p>)
-
                   }
                 </div>
                 <button className="interview-button" disabled>Request Interview</button>
