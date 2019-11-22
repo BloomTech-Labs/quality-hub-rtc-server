@@ -30,79 +30,47 @@ export default function Search({fields, setFields}) {
 				<label>Industry</label>
 				<select
 					onBlur={() => setCompany(true)}
-					id='Interview-dropdown-1'
 					name='industry'
 					placeholder='Industry'
 					onChange={handleChange}
 					required>
 					<option value="">All</option>
 					{data && data.industries.map(({name}) => <option value={name}>{name}</option>)}
-					{/* <option value='business'>Business</option>
-					<option value='education'>Education</option>
-					<option value='engineering'>Engineering</option>
-					<option value='hr'>Human Resources</option>
-					<option value='marketing'>Marketing</option>
-					<option value='software'>Software</option> */}
-					{/* {companyArray.map(company => (
-      <option value={state} key={state}>
-        {state}
-      </option>
-    ))} */}
-				</select>
-			</div>
-			<div className='search-field'>
-				<label>Position</label>
-				<select
-					onBlur={() => setCompany(true)}
-					id='Interview-dropdown-1'
-					name='postion'
-					placeholder='Position'
-					value='position'
-					onChange={handleChange}
-					required>
-					<option>All</option>
-					{/* {companyArray.map(company => (
-      <option value={state} key={state}>
-        {state}
-      </option>
-    ))} */}
 				</select>
 			</div>
 			<div className='search-field'>
 				<label>Price</label>
 				<select
 					onBlur={() => setCompany(true)}
-					id='Interview-dropdown-1'
 					name='price'
 					placeholder='Price'
 					onChange={handleChange}
 					required>
-					<option>All</option>
-					<option value='$0-$20'>$0-$20</option>
-					<option value='$21-$40'>$21-$40</option>
-					<option value='$21-$40'>$21-$40</option>
-					<option value='$81-$100'>$81-$100</option>
-					<option value='$100~'>$100~</option>
-
-					{/* {companyArray.map(company => (
-      <option value={state} key={state}>
-        {state}
-      </option>
-    ))} */}
+					<option value=''>All</option>
+					<option value='0, 20'>$0-$20</option>
+					<option value='21, 50'>$21-$50</option>
+					<option value='51, 80'>$51-$80</option>
+					<option value='81, 100'>$81-$100</option>
+					<option value='101,'> > $100~</option>
 				</select>
 			</div>
-			{/* <div className='input-label'>
+      <div className='search-field'>
+				<label>Sort results by</label>
 				<select
 					onBlur={() => setCompany(true)}
-					id='Interview-dropdown-1'
-					name='location'
-					placeholder='Location'
-					value='location'
+					name='orderBy'
+					placeholder='Order By'
 					onChange={handleChange}
 					required>
-					<option>Location</option>
+          <option value="">None</option>
+					<option value="REVIEW_COUNT, DESC">Most reviews</option>
+          <option value="REVIEW_COUNT, ASC">Least reviews</option>
+          <option value="PRICE, ASC">Price, low to high</option>
+          <option value="PRICE, DESC">Price, high to low</option>
+          <option value="DATE, DESC">Newest</option>
+          <option value="DATE, ASC">Oldest</option>
 				</select>
-			</div> */}
+			</div>
 			<div className='search-field-keyword'>
 				<label>Keywords</label>
 				<input type='text' name="tag" onChange={handleChange} placeholder='Search by Keyword' />
