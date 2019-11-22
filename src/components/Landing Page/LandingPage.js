@@ -1,7 +1,9 @@
 import React from 'react';
 import './LandingPage.scss';
 import CoachList from '../CoachList/CoachList';
+
 import LandingPageCTA from './LandingPageCTA';
+import LandingPageHeader from './LandingPageHeader';
 
 const InterviewLandingPage = ({
 	handleChange,
@@ -13,18 +15,7 @@ const InterviewLandingPage = ({
 	return (
 		<div className='interview-landing-page'>
 			<LandingPageCTA />
-			<div className='interview-header'>
-				<h1>Interview Q</h1>
-				<h3>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dictum
-					adipiscing amet, sollicitudin arcu. Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit. Vitae dictum adipiscing amet,
-					sollicitudin arcu. Lorem ipsum dolor sit amet, consectetur adipiscing
-					elit. Vitae dictum adipiscing amet, sollicitudin arcu.
-				</h3>
-				<br />
-				<button>X</button>
-			</div>
+			<LandingPageHeader />
 
 			<div className='Landingpage-contanier'>
 				<div className='Search-dropdowns'>

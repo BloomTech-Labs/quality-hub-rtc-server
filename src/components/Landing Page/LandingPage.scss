@@ -1,8 +1,10 @@
+@import '../../global/variables';
+
 .interview-cta {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
-	background-color: #4c92ed;
+	background-color: $main-blue;
 	// border: 1px solid grey;
 	padding: 1.8rem;
 
@@ -27,15 +29,18 @@
 
 .interview-header {
 	width: 100%;
-	background-color: lightgray;
-	margin-top: 0;
-	border: 1px solid lightgray;
+	// background-color: lightgray;
+	margin: 3rem 0 5rem;
+	text-align: left;
+	margin-left: 30%;
+	// border: 1px solid lightgray;
 	// padding: 2% 10%;
 
-	h3 {
+	h1 {
 		display: flex;
 		flex-wrap: wrap;
 		width: 50%;
+		color: $main-blue;
 	}
 }
 

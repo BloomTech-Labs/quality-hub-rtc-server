@@ -1,3 +1,5 @@
+@import '../../global/variables';
+
 .styled-nav {
 	display: flex;
 	justify-content: space-between;
@@ -10,7 +12,7 @@
 		padding-left: 1%;
 
 		a {
-			color: black;
+			color: $main-blue;
 			text-decoration: none;
 			text-align: left;
 		}
@@ -78,7 +80,6 @@
 	border-radius: 14px;
 	border: 1px solid lightgray;
 	text-align: center;
-
 }
 
 .dropdown-icons {
@@ -276,4 +277,3 @@
 		font-family: sans-serif;
 	}
 }
-
