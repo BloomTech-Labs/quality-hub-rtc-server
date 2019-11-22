@@ -65,28 +65,6 @@ const CoachForm = ({setFormState, formState, history, setProgress, industriesDat
                         onChange={event => setFormState({...formState, description: event.target.value})}
                         />
                 </div>
-                <div className="coach-form-location">
-                    <div className="coach-form-city">
-                        <h3>City</h3>
-                        <input
-                            type="text"
-                            name="city"
-                            placeholder="Enter Name"
-                            value={formState.city}
-                            onChange={event => setFormState({...formState, city: event.target.value})}
-                        />
-                    </div>
-                    <div className="coach-form-state">
-                        <h3>State</h3>
-                        <input
-                            type="text"
-                            name="state"
-                            placeholder="Enter Name"
-                            value={formState.state}
-                            onChange={event => setFormState({...formState, state: event.target.value})}
-                        />
-                    </div>
-                </div>
                 <div className="coach-form-buttons">
                     {/* <div onClick={handleProgress}>Back</div> */}
                     {/* <button type="submit" value="next" onClick={handleProgress}>Save and next</button> */}
