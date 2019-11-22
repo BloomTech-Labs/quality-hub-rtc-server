@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { gql } from "apollo-boost";
+
 import './Search.scss';
 
-export default function Search() {
+const GET_INDUSTRIES = gql`
+  query {
+    industries {
+      name
+    }
+  }
+`;
+
+
+export default function Search({fields, setFields}) {
+	const { loading, error, data } = useQuery(GET_INDUSTRIES);
 	const [company, setCompany] = useState();
-	const handleChange = () => {};
+	
+	const handleChange = (e) => {
+		console.log(fields);
+		e.preventDefault();
+		setFields({ ...fields, [e.target.name]: e.target.value });
+	};
 
 	return (
 		<div className='search-dropdowns'>
@@ -13,12 +31,12 @@ export default function Search() {
 				<select
 					onBlur={() => setCompany(true)}
 					id='Interview-dropdown-1'
-					name='company'
-					placeholder='Company'
-					value='company'
+					name='industry'
+					placeholder='Industry'
 					onChange={handleChange}
 					required>
-					<option>All</option>
+					<option value="">All</option>
+					{data && data.industries.map(({name}) => <option value={name}>{name}</option>)}
 					{/* <option value='business'>Business</option>
 					<option value='education'>Education</option>
 					<option value='engineering'>Engineering</option>
@@ -57,7 +75,6 @@ export default function Search() {
 					id='Interview-dropdown-1'
 					name='price'
 					placeholder='Price'
-					value='price'
 					onChange={handleChange}
 					required>
 					<option>All</option>
@@ -88,7 +105,7 @@ export default function Search() {
 			</div> */}
 			<div className='search-field-keyword'>
 				<label>Keywords</label>
-				<input type='text' placeholder='Search by Keyword' />
+				<input type='text' name="tag" onChange={handleChange} placeholder='Search by Keyword' />
 			</div>
 			<button className='search-reset'>Reset Filters</button>
 			<button className='search-apply'>Apply</button>
