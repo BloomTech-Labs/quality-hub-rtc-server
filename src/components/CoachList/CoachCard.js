@@ -13,7 +13,7 @@ const CoachCard = ({post}) => {
               <div className="flex-sect">
                 <div className="left-side">
                     <h3>{coach.first_name} {coach.last_name}</h3>
-                    <h4>{post.position} {coach.city}, {coach.state}}</h4>
+                    <h4>{post.position} {coach.city}, {coach.state}</h4>
                     <p>{post.description}</p>
                     <p>{post.industry.name}</p>
                 </div>

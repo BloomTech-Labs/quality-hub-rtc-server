@@ -11,7 +11,7 @@ const GET_INDUSTRIES = gql`
 `;
 
 const FilterList = ({ fields, setFields }) => {
-
+  
   const { loading, error, data } = useQuery(GET_INDUSTRIES);
 
   const handleChange = e => {
