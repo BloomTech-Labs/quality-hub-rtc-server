@@ -6,8 +6,6 @@ export default function LandingPageCTA() {
 	const [loggedin, setLoggedin] = useState(false);
 	const [iscoach, setIscoach] = useState(false);
 
-	localStorage.getItem('token') && setLoggedin(true);
-
 	return (
 		<div>
 			{ctaShow && (
