@@ -1,5 +1,9 @@
 @import '../../global/variables';
 
+.interview-container {
+	margin-top: 70px;
+}
+
 .interview-landing-page {
 	width: 80%;
 	margin-left: 150px;
@@ -62,7 +66,7 @@ button {
 	text-align: left;
 }
 
-.landingpage-container {
+.landingpage-content {
 	display: flex;
 	flex-direction: column;
 	width: 100%;

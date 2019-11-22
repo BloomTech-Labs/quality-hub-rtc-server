@@ -4,8 +4,13 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 1rem 0;
-	height: 50px;
+	height: 70px;
+	background-color: white;
+
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 500;
 
 	.nav-left {
 		display: flex;

@@ -9,13 +9,13 @@ import CoachList from '../CoachList/CoachList';
 
 export default function InterviewLandingPage() {
 	return (
-		<div>
+		<div className='interview-container'>
 			<LandingPageCTA />
 			<div className='interview-landing-page'>
 				<LandingPageHeader />
 				<QNav />
 
-				<div className='landingpage-container'>
+				<div className='landingpage-content'>
 					<Search />
 					<div className='Coach-List'>
 						<CoachList />
