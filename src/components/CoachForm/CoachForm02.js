@@ -35,11 +35,6 @@ function CoachFormTwo ({ history, progress, setProgress, formState, setFormState
     history.push("/addcoach")
   }
 
-  const [slider, setSlider] = useState(3);
-
-  const handleSlider = (e) => {
-    setSlider(e.target.value)
-  }
 
   return (
     <div className='slider'>
