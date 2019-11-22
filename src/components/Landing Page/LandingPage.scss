@@ -53,10 +53,13 @@ button {
 	text-align: left;
 }
 
-.Landingpage-contanier {
+.Landingpage-container {
 	display: flex;
 	width: 80%;
+	border: 1px solid green;
+	margin: 0 auto;
 }
+
 .Search-dropdowns {
 	margin-left: 8%;
 	width: 30%;

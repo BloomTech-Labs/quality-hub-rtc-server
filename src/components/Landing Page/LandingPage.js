@@ -4,6 +4,7 @@ import CoachList from '../CoachList/CoachList';
 
 import LandingPageCTA from './LandingPageCTA';
 import LandingPageHeader from './LandingPageHeader';
+import QNav from '../QNav';
 
 const InterviewLandingPage = ({
 	handleChange,
@@ -16,8 +17,9 @@ const InterviewLandingPage = ({
 		<div className='interview-landing-page'>
 			<LandingPageCTA />
 			<LandingPageHeader />
+			<QNav />
 
-			<div className='Landingpage-contanier'>
+			<div className='Landingpage-container'>
 				<div className='Search-dropdowns'>
 					<input type='text' placeholder='Search by Keyword' />
 					<div className='input-label'>
