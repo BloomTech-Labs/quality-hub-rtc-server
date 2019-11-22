@@ -13,6 +13,7 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
             $industryName: String!
             $description: String!
             $tagString: String
+            $coachEmail: String!
         ) {
             createPost(
                 price: $price
@@ -20,21 +21,23 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
                 industryName: $industryName
                 description: $description
                 tagString: $tagString
+                coachEmail: $coachEmail
             ) {
                 id
-                position
+                coachEmail
             }
         }
     `;
     const [addPost, error] = useMutation(ADD_POST);
 
     function submitHandler () {
-        setProgress(5)
+        setProgress(4)
 
         addPost({ formState })
         .then(results => {
             console.log(results)
             setTimeout(() => {
+
                 history.push("/addcoach/05")
             }, 3000);
         })
@@ -45,8 +48,8 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
     }
     
     function backHandler () {
-        setProgress(3)
-        history.push("/addcoach/03")
+        setProgress(2)
+        history.push("/addcoach/02")
     }
      
     return(
@@ -65,32 +68,8 @@ const CoachForm = ({setFormState, formState, history, accounts, setAccounts, pro
                     <h4>{formState.description}</h4>
                 </div>
                 <div>
-                    <h3>Location</h3>
-                    <h4>{`${formState.city}, ${formState.state}`}</h4>
-                </div>
-                <div>
                     <h3>Price</h3>
-                    <h4>{formState.price}</h4>
-                </div>
-                <div>
-                    <h3>LinkedIn</h3>
-                    <h4>{accounts.linkedin_url}</h4>
-                </div>
-                <div>
-                    <h3>GitHub</h3>
-                    <h4>{accounts.github_url}</h4>
-                </div>
-                <div>
-                    <h3>Website</h3>
-                    <h4>{accounts.website_url}</h4>
-                </div>
-                <div>
-                    <h3>Portfolio</h3>
-                    <h4>{accounts.portfolio_url}</h4>
-                </div>
-                <div>
-                    <h3>Twitter</h3>
-                    <h4>{accounts.twitter_url}</h4>
+                    <h4>{`$${formState.price}`}</h4>
                 </div>
             </div>
             <div>
