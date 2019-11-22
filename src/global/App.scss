@@ -152,23 +152,8 @@ textarea {
 	padding: 20px;
 }
 
-.input-label {
-	display: flex;
-	flex-direction: column;
-}
-
-.input-label label {
-	text-align: left;
-	margin-bottom: -14px;
-}
-
-.input-label p {
-	align-self: flex-end;
-	margin: 0 0;
-}
-
 .sign-in-button,
-.input-label input {
+input {
 	width: 100%;
 }
 
@@ -186,7 +171,7 @@ label {
 	justify-content: space-between;
 }
 
-.two-inputs .input-label {
+.two-inputs {
 	width: 47%;
 }
 
