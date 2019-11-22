@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import InterviewLandingPage from './components/Landing Page/index.js';
+import InterviewLandingPage from './components/Landing Page/';
 import CoachForm00 from './components/CoachForm/CoachForm00';
 import NavBar from './components/NavBar';
 import DatePicker from './components/DatePicker';
