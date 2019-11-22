@@ -31,7 +31,7 @@ export default function ProgressBar({ progress }) {
 					style={{ border: progress >= 3 && '2px solid purple' }}>
 					<p style={{ color: progress >= 3 && 'purple'}}>3</p>
 				</div>
-        <p style={{ color: progress >= 3 && 'purple'}}>Linked Accounts</p>
+        <p style={{ color: progress >= 3 && 'purple'}}>Review Post</p>
         <div
 					className='prog-line'
 					style={{ border: progress >= 4 && '2px solid purple' }}>  
@@ -41,8 +41,8 @@ export default function ProgressBar({ progress }) {
 					style={{ border: progress >= 4 && '2px solid purple' }}>
 					<p style={{ color: progress >= 4 && 'purple'}}>4</p>
 				</div>
-        <p style={{ color: progress >= 4 && 'purple'}}>Availability</p>
-        <div
+        <p style={{ color: progress >= 4 && 'purple'}}>Done</p>
+        {/* <div
 					className='prog-line'
 					style={{ border: progress >= 5 && '2px solid purple' }}>  
         </div>
@@ -51,7 +51,7 @@ export default function ProgressBar({ progress }) {
 					style={{ border: progress >= 5 && '2px solid purple' }}>
 					<p style={{ color: progress >= 5 && 'purple'}}>5</p>
 				</div>
-        <p style={{ color: progress >= 5 && 'purple'}}>Review Information</p>
+        <p style={{ color: progress >= 5 && 'purple'}}>Done</p> */}
 			</div>
 		</div>
 	);
