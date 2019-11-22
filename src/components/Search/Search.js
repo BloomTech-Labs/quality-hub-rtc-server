@@ -63,12 +63,12 @@ export default function Search({fields, setFields}) {
 					onChange={handleChange}
 					required>
           <option value="">None</option>
-					<option value="REVIEW_COUNT, DESC">Most reviews</option>
-          <option value="REVIEW_COUNT, ASC">Least reviews</option>
-          <option value="PRICE, ASC">Price, low to high</option>
-          <option value="PRICE, DESC">Price, high to low</option>
-          <option value="DATE, DESC">Newest</option>
-          <option value="DATE, ASC">Oldest</option>
+					<option value="">Most reviews</option>
+          <option value="">Least reviews</option>
+          <option value="price_ASC">Price, low to high</option>
+          <option value="price_DESC">Price, high to low</option>
+          <option value="">Newest</option>
+          <option value="">Oldest</option>
 				</select>
 			</div>
 			<div className='search-field-keyword'>
