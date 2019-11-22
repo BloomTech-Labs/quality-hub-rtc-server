@@ -19,15 +19,12 @@ const CoachCard = ({post}) => {
                 </div>
                 <div className="right-side">
                     <h4><span>&#x2605; 4.9</span>   ${post.price} / hour</h4>
-
-
                 </div>
               </div>
               <div className="footer">
                 <p>Links go here</p>
                 <div>
                   {post.tags.map(tag => <p>{tag.name}</p>)
-
                   }
                 </div>
                 <button className="interview-button" disabled>Request Interview</button>
