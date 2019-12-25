@@ -1,26 +1,28 @@
 let express = require('express.io');
 let cors = require('cors');
 let server = express();
-server.use(cors());
+// server.use(cors());
 server.http().io();
 let PORT = 4000
 console.log('server started on port ' + PORT);
 
 server.use(express.static(__dirname + '/public'));
-server.use(cors({
-    origins: '*'
-  }));
-server.options("/*", function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+// server.use(cors({
+//     origins: '*'
+//   }));
+// server.options("/*", function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.header("Access-Control-Allow-Credentials", "false");
+//     next();
+//   });
 
-server.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
-});
+// server.all('*', function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+//     res.header("Access-Control-Allow-Credentials", "false");
+//     next();
+// });
 
 //joined room
 server.io.route('ready', function(req) {
